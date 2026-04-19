@@ -55,3 +55,6 @@ htmlcov/
 
 # Misc
 docs_exam/
+notebooks/*/tmp/
+notebooks/*/output/
+notebooks/*/.backups
