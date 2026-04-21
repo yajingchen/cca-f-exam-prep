@@ -54,4 +54,3 @@ next-env.d.ts
 .claude/*.local*
 logs.txt
 .*-mcp
-.github/

@@ -5,9 +5,6 @@
 .claude/settings.local.json
 .claude/hooks/
 
-# github
-.github/
-
 # Python
 __pycache__/
 *.py[cod]
