@@ -1,0 +1,20 @@
+// Note: the "@anthropic-ai/claude-code" package has been renamed
+// to "@anthropic-ai/claude-agent-sdk"
+import { query } from "@anthropic-ai/claude-agent-sdk";
+
+// const prompt = "Look for duplicate queries in the ./src/queries dir";
+const prompt = "Add a description to the package.json file";
+
+for await (const message of query({
+  prompt,
+  options: {
+    allowedTools: ["Edit"]
+  }
+})) {
+  console.log(JSON.stringify(message, null, 2));
+}
+
+
+// read permissions are given by default
+// write permissions need to be updated/ provided via 
+// settings file update or passing through the above query()
