@@ -6,30 +6,71 @@ Study materials and hands-on notebooks for the Anthropic Claude Certified Associ
 
 ```
 notebooks/
-└── Building with the Claude API/   # Core API concepts via Jupyter notebooks
-    ├── 001_requests.ipynb
-    ├── 002_system_prompt.ipynb
-    ├── 003_temperature.ipynb
-    ├── 004_streaming.ipynb
-    ├── 005_Controlling_Output.ipynb
-    ├── 006_prompt_evals.ipynb
-    ├── ...
-    ├── 023_mcp_cli-chatbot-project/   # MCP CLI chatbot project
-    └── 024_claude-code_app-starter/   # Claude Code app starter
+├── Building with the Claude API/       # Core API concepts via Jupyter notebooks
+│   ├── 001_requests.ipynb
+│   ├── 002_system_prompt.ipynb
+│   ├── 003_temperature.ipynb
+│   ├── 004_streaming.ipynb
+│   ├── 005_Controlling_Output.ipynb
+│   ├── 006_prompt_evals.ipynb
+│   ├── 007_prompt_engineering.ipynb
+│   ├── 008_tool_usage_process.ipynb
+│   ├── 009_tools_multi-turn.ipynb
+│   ├── 010_tool_streaming.ipynb
+│   ├── 011_text_editor_tool.ipynb
+│   ├── 012_web_search.ipynb
+│   ├── 013_chunking.ipynb
+│   ├── 014_embeddings.ipynb
+│   ├── 015_vectordb.ipynb
+│   ├── 016_bm25.ipynb
+│   ├── 017_hybrid.ipynb
+│   ├── 018_extended-thinking.ipynb
+│   ├── 019_images_and_pdf_handling.ipynb
+│   ├── 020_citations.ipynb
+│   ├── 021_caching.ipynb
+│   ├── 022_code_execution_and_files_api.ipynb
+│   ├── 023_mcp_cli-chatbot-project/    # MCP CLI chatbot (Python, uv)
+│   └── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│
+└── Claude Code in Action/             # Claude Code workflows and agentic patterns
+    ├── 001_uigen/                     # UI generator (Next.js, @ai-sdk/anthropic)
+    └── 002_queries/                   # Natural language queries (TypeScript, Claude Agent SDK, SQLite)
 
-docs/                # Architecture notes and decisions
-src/                 # Source modules (api, persistence)
-tools/               # Scripts and prompts
+docs_exam/                             # Official exam PDFs (Course Catalog, Exam Guide, FAQ)
 ```
 
 ## Setup
+
+### Jupyter Notebooks
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Create a `.env` file with your API key:
+### Python sub-projects (023, 024)
+
+Each uses `uv` for isolated environments:
+
+```bash
+cd notebooks/Building\ with\ the\ Claude\ API/023_mcp_cli-chatbot-project
+uv sync
+```
+
+### Node.js sub-projects (001_uigen, 002_queries)
+
+```bash
+cd notebooks/Claude\ Code\ in\ Action/001_uigen
+npm install
+
+cd notebooks/Claude\ Code\ in\ Action/002_queries
+npm install
+```
+
+### Environment
+
+Create a `.env` file at the repo root with your API key:
 
 ```
 ANTHROPIC_API_KEY=your_key_here
+VOYAGE_API_KEY=your_key_here   # required for notebooks 014, 015, 017
 ```

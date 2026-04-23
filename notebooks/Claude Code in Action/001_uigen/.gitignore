@@ -52,5 +52,6 @@ next-env.d.ts
 
 # 
 .claude/*.local*
+.claude/agent-memory/
 logs.txt
 .*-mcp

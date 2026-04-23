@@ -1,7 +1,5 @@
 anthropic
 ipython
 jupyter
-numpy
-pandas
 python-dotenv
-scikit-learn
+voyageai

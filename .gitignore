@@ -1,9 +1,9 @@
 # macOS
 .DS_Store
 
-# Claude Code — ignore personal/local files, track project-level config
+# Claude Code — ignore personal/local files, track project-level config (subagents, custom slash commands, settings.json and hooks, CLAUDE.md)
 .claude/settings.local.json
-.claude/hooks/
+.claude/agent-memory/
 
 # Python
 __pycache__/
