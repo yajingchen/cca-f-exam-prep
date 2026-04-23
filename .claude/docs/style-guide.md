@@ -1,1 +1,1 @@
-design system files, etc., and any optional shared reference material
+brand guidelines, design system files, etc., and any optional shared reference material

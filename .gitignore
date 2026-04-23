@@ -4,6 +4,7 @@
 # Claude Code — ignore personal/local files, track project-level config (subagents, custom slash commands, settings.json and hooks, CLAUDE.md)
 .claude/settings.local.json
 .claude/agent-memory/
+.claude/scheduled_tasks.lock
 
 # Python
 __pycache__/
@@ -54,7 +55,6 @@ htmlcov/
 *.swo
 
 # Misc
-docs_exam/
 notebooks/*/tmp/
 notebooks/*/output/
 notebooks/*/.backups
