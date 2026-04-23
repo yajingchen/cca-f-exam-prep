@@ -74,3 +74,22 @@ Create a `.env` file at the repo root with your API key:
 ANTHROPIC_API_KEY=your_key_here
 VOYAGE_API_KEY=your_key_here   # required for notebooks 014, 015, 017
 ```
+
+## Claude Code Configuration
+
+The `.claude/` directory contains project-level Claude Code config (tracked in git; `settings.local.json` and `agent-memory/` are gitignored):
+
+```
+.claude/
+├── agents/
+│   └── code-reviewer.md       # Custom subagent: security-focused code review
+├── commands/
+│   ├── audit.md               # /audit — runs npm audit and fixes vulnerable deps
+│   └── write_tests.md         # /write_tests — generates test suites for given targets
+├── docs/
+│   ├── architecture.md        # Architecture notes
+│   └── style-guide.md         # Style reference
+├── hooks/
+│   └── read_hook.js           # PreToolUse hook: blocks Claude from reading .env
+└── settings.example.json      # Example hook configuration template
+```
