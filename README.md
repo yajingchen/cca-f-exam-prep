@@ -91,5 +91,9 @@ The `.claude/` directory contains project-level Claude Code config (tracked in g
 │   └── style-guide.md         # Style reference
 ├── hooks/
 │   └── read_hook.js           # PreToolUse hook: blocks Claude from reading .env
-└── settings.example.json      # Example hook configuration template
+├── skills/
+│   └── pr-description/
+│       └── SKILL.md           # /pr-description — writes PR descriptions
+├── settings.example.json      # Example hook configuration template
+└── settings.json              # Project-level Claude Code settings (hooks, permissions)
 ```
