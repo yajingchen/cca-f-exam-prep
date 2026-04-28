@@ -30,7 +30,8 @@ notebooks/
 │   ├── 021_caching.ipynb
 │   ├── 022_code_execution_and_files_api.ipynb
 │   ├── 023_mcp_cli-chatbot-project/    # MCP CLI chatbot (Python, uv)
-│   └── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   ├── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   └── 024_claude-code_app-starter-TDD/ # App starter — TDD workflow variant (Python, uv, pytest)
 │
 └── Claude Code in Action/             # Claude Code workflows and agentic patterns
     ├── 001_uigen/                     # UI generator (Next.js, @ai-sdk/anthropic)
@@ -47,13 +48,21 @@ docs_exam/                             # Official exam PDFs (Course Catalog, Exa
 pip install -r requirements.txt
 ```
 
-### Python sub-projects (023, 024)
+### Python sub-projects (023, 024, 024-TDD)
 
 Each uses `uv` for isolated environments:
 
 ```bash
 cd notebooks/Building\ with\ the\ Claude\ API/023_mcp_cli-chatbot-project
 uv sync
+
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter
+uv sync
+
+# TDD variant — run tests with:
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter-TDD
+uv sync
+uv run pytest
 ```
 
 ### Node.js sub-projects (001_uigen, 002_queries)
