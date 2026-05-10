@@ -10,13 +10,13 @@ CCA-F exam prep repo. Two courses covered:
 ## Python Environment
 
 - Notebooks use `pip install -r requirements.txt` (root-level)
-- Sub-projects (023, 024) use `uv` — each has its own `pyproject.toml` and `.venv`
+- Sub-projects (023, 024, 024-TDD) use `uv` — each has its own `pyproject.toml` and `.venv`
 
 ## Key Dependencies
 
 - Notebooks: `anthropic`, `python-dotenv`, `voyageai` (embeddings notebooks 014/015/017)
 - 023 MCP chatbot: `anthropic`, `mcp[cli]`, `prompt-toolkit`
-- 024 app starter: `mcp[cli]`, `markitdown`, `pydantic`, `pytest`
+- 024 app starter (both variants): `mcp[cli]`, `markitdown`, `pydantic`, `pytest`
 - 001_uigen: Next.js + `@ai-sdk/anthropic`
 - 002_queries: TypeScript + `@anthropic-ai/claude-agent-sdk` + SQLite
 
