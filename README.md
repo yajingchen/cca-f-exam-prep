@@ -7,6 +7,7 @@ Study materials and hands-on notebooks for the Anthropic Claude Certified Associ
 ```
 notebooks/
 ├── Building with the Claude API/       # Core API concepts via Jupyter notebooks
+│   ├── 000_Video Course Notes – Building with the Claude API.md  # Full course notes
 │   ├── 001_requests.ipynb
 │   ├── 002_system_prompt.ipynb
 │   ├── 003_temperature.ipynb
@@ -30,9 +31,11 @@ notebooks/
 │   ├── 021_caching.ipynb
 │   ├── 022_code_execution_and_files_api.ipynb
 │   ├── 023_mcp_cli-chatbot-project/    # MCP CLI chatbot (Python, uv)
-│   └── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   ├── 024_claude-code_app-starter/   # Claude Code app starter — complete implementation (Python, uv)
+│   └── 024_claude-code_app-starter-TDD/  # Same project as TDD scaffold — tests written, impl to fill in
 │
 └── Claude Code in Action/             # Claude Code workflows and agentic patterns
+    ├── 000_Video Course Notes – Claude Code in Action.md  # Full course notes
     ├── 001_uigen/                     # UI generator (Next.js, @ai-sdk/anthropic)
     └── 002_queries/                   # Natural language queries (TypeScript, Claude Agent SDK, SQLite)
 
@@ -53,6 +56,14 @@ Each uses `uv` for isolated environments:
 
 ```bash
 cd notebooks/Building\ with\ the\ Claude\ API/023_mcp_cli-chatbot-project
+uv sync
+
+# Complete implementation
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter
+uv sync
+
+# TDD scaffold (tests provided, fill in the implementation)
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter-TDD
 uv sync
 ```
 
