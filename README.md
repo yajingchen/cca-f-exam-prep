@@ -30,11 +30,20 @@ notebooks/
 │   ├── 021_caching.ipynb
 │   ├── 022_code_execution_and_files_api.ipynb
 │   ├── 023_mcp_cli-chatbot-project/    # MCP CLI chatbot (Python, uv)
-│   └── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   ├── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   └── 024_claude-code_app-starter-TDD/  # TDD variant of app starter — same MCP tools, full test suite (Python, uv)
 │
 └── Claude Code in Action/             # Claude Code workflows and agentic patterns
     ├── 001_uigen/                     # UI generator (Next.js, @ai-sdk/anthropic)
-    └── 002_queries/                   # Natural language queries (TypeScript, Claude Agent SDK, SQLite)
+    └── 002_queries/                   # E-commerce NL-to-SQL queries (TypeScript, Claude Agent SDK, SQLite)
+        ├── src/
+        │   ├── main.ts
+        │   ├── schema.ts              # Full e-commerce DB schema
+        │   ├── slack.ts
+        │   └── queries/               # 8 query modules: analytics, customer, inventory,
+        │                              #   order, product, promotion, review, shipping
+        ├── hooks/                     # PreToolUse hooks (query_hook, read_hook, tsc)
+        └── scripts/init-claude.js    # Initializes Claude settings for this project
 
 docs_exam/                             # Official exam PDFs (Course Catalog, Exam Guide, FAQ)
 ```
@@ -47,12 +56,18 @@ docs_exam/                             # Official exam PDFs (Course Catalog, Exa
 pip install -r requirements.txt
 ```
 
-### Python sub-projects (023, 024)
+### Python sub-projects (023, 024, 024-TDD)
 
 Each uses `uv` for isolated environments:
 
 ```bash
 cd notebooks/Building\ with\ the\ Claude\ API/023_mcp_cli-chatbot-project
+uv sync
+
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter
+uv sync
+
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter-TDD
 uv sync
 ```
 
