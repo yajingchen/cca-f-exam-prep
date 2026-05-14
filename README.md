@@ -29,8 +29,9 @@ notebooks/
 │   ├── 020_citations.ipynb
 │   ├── 021_caching.ipynb
 │   ├── 022_code_execution_and_files_api.ipynb
-│   ├── 023_mcp_cli-chatbot-project/    # MCP CLI chatbot (Python, uv)
-│   └── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   ├── 023_mcp_cli-chatbot-project/        # MCP CLI chatbot (Python, uv)
+│   ├── 024_claude-code_app-starter/        # Claude Code app starter (Python, uv)
+│   └── 024_claude-code_app-starter-TDD/   # TDD variant — adds python-docx, pytest-first workflow
 │
 └── Claude Code in Action/             # Claude Code workflows and agentic patterns
     ├── 001_uigen/                     # UI generator (Next.js, @ai-sdk/anthropic)
@@ -53,6 +54,13 @@ Each uses `uv` for isolated environments:
 
 ```bash
 cd notebooks/Building\ with\ the\ Claude\ API/023_mcp_cli-chatbot-project
+uv sync
+
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter
+uv sync
+
+# or the TDD variant (adds python-docx dependency)
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter-TDD
 uv sync
 ```
 
