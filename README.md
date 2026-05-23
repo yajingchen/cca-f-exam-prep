@@ -30,7 +30,8 @@ notebooks/
 │   ├── 021_caching.ipynb
 │   ├── 022_code_execution_and_files_api.ipynb
 │   ├── 023_mcp_cli-chatbot-project/    # MCP CLI chatbot (Python, uv)
-│   └── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   ├── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   └── 024_claude-code_app-starter-TDD/ # TDD variant: MCP document tools server with pytest (Python, uv)
 │
 └── Claude Code in Action/             # Claude Code workflows and agentic patterns
     ├── 001_uigen/                     # UI generator (Next.js, @ai-sdk/anthropic)
