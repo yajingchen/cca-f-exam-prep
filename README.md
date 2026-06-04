@@ -7,6 +7,7 @@ Study materials and hands-on notebooks for the Anthropic Claude Certified Associ
 ```
 notebooks/
 ├── Building with the Claude API/       # Core API concepts via Jupyter notebooks
+│   ├── 000_Video Course Notes – Building with the Claude API.md
 │   ├── 001_requests.ipynb
 │   ├── 002_system_prompt.ipynb
 │   ├── 003_temperature.ipynb
@@ -30,11 +31,13 @@ notebooks/
 │   ├── 021_caching.ipynb
 │   ├── 022_code_execution_and_files_api.ipynb
 │   ├── 023_mcp_cli-chatbot-project/    # MCP CLI chatbot (Python, uv)
-│   └── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   ├── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   └── 024_claude-code_app-starter-TDD/  # TDD variant: document tools MCP server (Python, uv)
 │
 └── Claude Code in Action/             # Claude Code workflows and agentic patterns
-    ├── 001_uigen/                     # UI generator (Next.js, @ai-sdk/anthropic)
-    └── 002_queries/                   # Natural language queries (TypeScript, Claude Agent SDK, SQLite)
+    ├── 000_Video Course Notes – Claude Code in Action.md
+    ├── 001_uigen/                     # UI generator (Next.js, Prisma/SQLite, auth, @ai-sdk/anthropic)
+    └── 002_queries/                   # E-commerce NL query engine (TypeScript, Claude Agent SDK, SQLite)
 
 docs_exam/                             # Official exam PDFs (Course Catalog, Exam Guide, FAQ)
 ```
@@ -47,23 +50,38 @@ docs_exam/                             # Official exam PDFs (Course Catalog, Exa
 pip install -r requirements.txt
 ```
 
-### Python sub-projects (023, 024)
+### Python sub-projects (023, 024, 024-TDD)
 
 Each uses `uv` for isolated environments:
 
 ```bash
 cd notebooks/Building\ with\ the\ Claude\ API/023_mcp_cli-chatbot-project
 uv sync
+
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter
+uv sync
+
+# TDD variant — document tools MCP server with pytest suite
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter-TDD
+uv sync
+uv run pytest      # run tests
 ```
 
 ### Node.js sub-projects (001_uigen, 002_queries)
 
+`001_uigen` requires a full setup that installs dependencies, generates the Prisma client, and runs DB migrations:
+
 ```bash
 cd notebooks/Claude\ Code\ in\ Action/001_uigen
-npm install
+npm run setup    # installs deps + generates Prisma client + runs migrations
+npm run dev      # dev server at http://localhost:3000
+```
 
+`002_queries` is a TypeScript e-commerce query engine backed by SQLite:
+
+```bash
 cd notebooks/Claude\ Code\ in\ Action/002_queries
-npm install
+npm run setup
 ```
 
 ### Environment
