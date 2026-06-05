@@ -6,7 +6,7 @@ Study materials and hands-on notebooks for the Anthropic Claude Certified Associ
 
 ```
 notebooks/
-├── Building with the Claude API/       # Core API concepts via Jupyter notebooks
+├── Building with the Claude API/           # Core API concepts via Jupyter notebooks
 │   ├── 001_requests.ipynb
 │   ├── 002_system_prompt.ipynb
 │   ├── 003_temperature.ipynb
@@ -29,14 +29,20 @@ notebooks/
 │   ├── 020_citations.ipynb
 │   ├── 021_caching.ipynb
 │   ├── 022_code_execution_and_files_api.ipynb
-│   ├── 023_mcp_cli-chatbot-project/    # MCP CLI chatbot (Python, uv)
-│   └── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   ├── 023_mcp_cli-chatbot-project/        # MCP CLI chatbot (Python, uv)
+│   ├── 024_claude-code_app-starter/        # Document Tools MCP server — Claude Code app starter (Python, uv)
+│   └── 024_claude-code_app-starter-TDD/   # Same project built TDD-first (Python, uv, pytest)
 │
-└── Claude Code in Action/             # Claude Code workflows and agentic patterns
-    ├── 001_uigen/                     # UI generator (Next.js, @ai-sdk/anthropic)
-    └── 002_queries/                   # Natural language queries (TypeScript, Claude Agent SDK, SQLite)
+└── Claude Code in Action/                 # Claude Code workflows and agentic patterns
+    ├── 001_uigen/                         # UI generator (Next.js, @ai-sdk/anthropic)
+    └── 002_queries/                       # NL→SQL queries with Slack alerts (TypeScript, Claude Agent SDK, SQLite)
 
-docs_exam/                             # Official exam PDFs (Course Catalog, Exam Guide, FAQ)
+.github/
+└── workflows/
+    ├── claude.yml                         # Claude PR Assistant — responds to @claude in issues/PRs
+    └── claude-code-review.yml             # Claude Code Review — automated review on every PR
+
+docs_exam/                                 # Official exam PDFs (Course Catalog, Exam Guide, FAQ)
 ```
 
 ## Setup
@@ -74,6 +80,17 @@ Create a `.env` file at the repo root with your API key:
 ANTHROPIC_API_KEY=your_key_here
 VOYAGE_API_KEY=your_key_here   # required for notebooks 014, 015, 017
 ```
+
+## GitHub Actions
+
+Two workflows live in `.github/workflows/` and run automatically on every PR:
+
+| Workflow | File | Trigger | What it does |
+|---|---|---|---|
+| Claude PR Assistant | `claude.yml` | `@claude` mention in an issue or PR comment | Claude reads the comment and acts on the request (implement, explain, fix) |
+| Claude Code Review | `claude-code-review.yml` | PR opened / updated | Runs the `code-review` plugin via `claude-code-action` and posts inline review comments |
+
+Both workflows use the `CLAUDE_CODE_OAUTH_TOKEN` repository secret.
 
 ## Claude Code Configuration
 
