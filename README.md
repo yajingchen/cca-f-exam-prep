@@ -30,10 +30,11 @@ notebooks/
 │   ├── 021_caching.ipynb
 │   ├── 022_code_execution_and_files_api.ipynb
 │   ├── 023_mcp_cli-chatbot-project/    # MCP CLI chatbot (Python, uv)
-│   └── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   ├── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   └── 024_claude-code_app-starter-TDD/  # Claude Code app starter — TDD variant (Python, uv)
 │
 └── Claude Code in Action/             # Claude Code workflows and agentic patterns
-    ├── 001_uigen/                     # UI generator (Next.js, @ai-sdk/anthropic)
+    ├── 001_uigen/                     # UI generator (Next.js, @ai-sdk/anthropic, Prisma/SQLite, JWT auth)
     └── 002_queries/                   # Natural language queries (TypeScript, Claude Agent SDK, SQLite)
 
 docs_exam/                             # Official exam PDFs (Course Catalog, Exam Guide, FAQ)
@@ -97,3 +98,12 @@ The `.claude/` directory contains project-level Claude Code config (tracked in g
 ├── settings.example.json      # Example hook configuration template
 └── settings.json              # Project-level Claude Code settings (hooks, permissions)
 ```
+
+## GitHub Actions
+
+Two automated workflows live in `.github/workflows/`:
+
+| Workflow | Trigger | Purpose |
+|---|---|---|
+| `claude.yml` | Issue/PR comments, PR reviews, new issues | Claude Code assistant — responds to `@claude` mentions and helps with issues/PRs |
+| `claude-code-review.yml` | PR opened / synchronized | Automated code review on every pull request |
