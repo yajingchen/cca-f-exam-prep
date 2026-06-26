@@ -7,6 +7,7 @@ Study materials and hands-on notebooks for the Anthropic Claude Certified Associ
 ```
 notebooks/
 ├── Building with the Claude API/       # Core API concepts via Jupyter notebooks
+│   ├── 000_Video Course Notes – Building with the Claude API.md
 │   ├── 001_requests.ipynb
 │   ├── 002_system_prompt.ipynb
 │   ├── 003_temperature.ipynb
@@ -30,9 +31,11 @@ notebooks/
 │   ├── 021_caching.ipynb
 │   ├── 022_code_execution_and_files_api.ipynb
 │   ├── 023_mcp_cli-chatbot-project/    # MCP CLI chatbot (Python, uv)
-│   └── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   ├── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   └── 024_claude-code_app-starter-TDD/ # TDD variant: document-tools MCP server (Python, uv, pytest)
 │
 └── Claude Code in Action/             # Claude Code workflows and agentic patterns
+    ├── 000_Video Course Notes – Claude Code in Action.md
     ├── 001_uigen/                     # UI generator (Next.js, @ai-sdk/anthropic)
     └── 002_queries/                   # Natural language queries (TypeScript, Claude Agent SDK, SQLite)
 
@@ -47,13 +50,22 @@ docs_exam/                             # Official exam PDFs (Course Catalog, Exa
 pip install -r requirements.txt
 ```
 
-### Python sub-projects (023, 024)
+### Python sub-projects (023, 024, 024-TDD)
 
 Each uses `uv` for isolated environments:
 
 ```bash
 cd notebooks/Building\ with\ the\ Claude\ API/023_mcp_cli-chatbot-project
 uv sync
+
+# Original app starter
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter
+uv sync
+
+# TDD variant (document-tools MCP server with pytest suite)
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter-TDD
+uv sync
+uv run pytest
 ```
 
 ### Node.js sub-projects (001_uigen, 002_queries)
@@ -96,4 +108,14 @@ The `.claude/` directory contains project-level Claude Code config (tracked in g
 │       └── SKILL.md           # /pr-description — writes PR descriptions
 ├── settings.example.json      # Example hook configuration template
 └── settings.json              # Project-level Claude Code settings (hooks, permissions)
+```
+
+## GitHub Actions
+
+The `.github/workflows/` directory contains two CI workflows:
+
+```
+.github/workflows/
+├── claude-code-review.yml     # Claude Code automated PR code review
+└── claude.yml                 # Claude PR assistant (responds to issue/PR mentions)
 ```
