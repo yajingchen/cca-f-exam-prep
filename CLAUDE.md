@@ -10,7 +10,7 @@ CCA-F exam prep repo. Two courses covered:
 ## Python Environment
 
 - Notebooks use `pip install -r requirements.txt` (root-level)
-- Sub-projects (023, 024) use `uv` — each has its own `pyproject.toml` and `.venv`
+- Sub-projects (023, 024, 024-TDD) use `uv` — each has its own `pyproject.toml` and `.venv`
 
 ## Key Dependencies
 
