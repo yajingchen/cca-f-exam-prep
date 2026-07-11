@@ -7,6 +7,7 @@ Study materials and hands-on notebooks for the Anthropic Claude Certified Associ
 ```
 notebooks/
 ├── Building with the Claude API/       # Core API concepts via Jupyter notebooks
+│   ├── 000_Video Course Notes – Building with the Claude API.md
 │   ├── 001_requests.ipynb
 │   ├── 002_system_prompt.ipynb
 │   ├── 003_temperature.ipynb
@@ -30,9 +31,11 @@ notebooks/
 │   ├── 021_caching.ipynb
 │   ├── 022_code_execution_and_files_api.ipynb
 │   ├── 023_mcp_cli-chatbot-project/    # MCP CLI chatbot (Python, uv)
-│   └── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   ├── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   └── 024_claude-code_app-starter-TDD/  # TDD variant of 024 (Python, uv, pytest)
 │
 └── Claude Code in Action/             # Claude Code workflows and agentic patterns
+    ├── 000_Video Course Notes – Claude Code in Action.md
     ├── 001_uigen/                     # UI generator (Next.js, @ai-sdk/anthropic)
     └── 002_queries/                   # Natural language queries (TypeScript, Claude Agent SDK, SQLite)
 
