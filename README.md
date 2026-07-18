@@ -7,6 +7,7 @@ Study materials and hands-on notebooks for the Anthropic Claude Certified Associ
 ```
 notebooks/
 ├── Building with the Claude API/       # Core API concepts via Jupyter notebooks
+│   ├── 000_Video Course Notes – Building with the Claude API.md  # Video course notes
 │   ├── 001_requests.ipynb
 │   ├── 002_system_prompt.ipynb
 │   ├── 003_temperature.ipynb
@@ -25,14 +26,17 @@ notebooks/
 │   ├── 016_bm25.ipynb
 │   ├── 017_hybrid.ipynb
 │   ├── 018_extended-thinking.ipynb
+│   ├── 019_images/                    # Sample images for notebook 019
 │   ├── 019_images_and_pdf_handling.ipynb
 │   ├── 020_citations.ipynb
 │   ├── 021_caching.ipynb
 │   ├── 022_code_execution_and_files_api.ipynb
 │   ├── 023_mcp_cli-chatbot-project/    # MCP CLI chatbot (Python, uv)
-│   └── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   ├── 024_claude-code_app-starter/   # Claude Code app starter (Python, uv)
+│   └── 024_claude-code_app-starter-TDD/  # TDD variant: document tools MCP server (Python, uv)
 │
 └── Claude Code in Action/             # Claude Code workflows and agentic patterns
+    ├── 000_Video Course Notes – Claude Code in Action.md  # Video course notes
     ├── 001_uigen/                     # UI generator (Next.js, @ai-sdk/anthropic)
     └── 002_queries/                   # Natural language queries (TypeScript, Claude Agent SDK, SQLite)
 
@@ -47,12 +51,20 @@ docs_exam/                             # Official exam PDFs (Course Catalog, Exa
 pip install -r requirements.txt
 ```
 
-### Python sub-projects (023, 024)
+### Python sub-projects (023, 024, 024-TDD)
 
 Each uses `uv` for isolated environments:
 
 ```bash
 cd notebooks/Building\ with\ the\ Claude\ API/023_mcp_cli-chatbot-project
+uv sync
+
+# Claude Code app starter (document tools MCP server)
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter
+uv sync
+
+# TDD variant — same tools, full pytest suite
+cd notebooks/Building\ with\ the\ Claude\ API/024_claude-code_app-starter-TDD
 uv sync
 ```
 
